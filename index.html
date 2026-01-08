@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attitude Test</title>
+    <style>
+        /* Basic CSS for readability and structure */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .section-container {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="password"], textarea, select {
+            width: 98%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't affect total width */
+        }
+        button[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        button[type="submit"]:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Attitude Assessment Test</h1>
+
+    <div class="section-container">
+        <h2>Section 1: Initial Reflection</h2>
+        <form action="/submit-section-1" method="post">
+
+            <div class="question">
+                <label for="s1q1">1. Describe in detail a recent challenge you overcame. (Text Area)</label>
+                <textarea id="s1q1" name="s1q1_challenge" rows="4" required></textarea>
+            </div>
+
+            <div class="question">
+                <label for="s1q2">2. Enter your unique assessment ID for verification. (Password Field)</label>
+                <input type="password" id="s1q2" name="s1q2_assessment_id" required>
+            </div>
+
+            <div class="question">
+                <label>3. Do you usually seek out constructive criticism? (Radio Button)</label>
+                <input type="radio" id="s1q3_yes" name="s1q3_criticism" value="yes" required>
+                <label for="s1q3_yes" style="display: inline;">Yes</label><br>
+                <input type="radio" id="s1q3_no" name="s1q3_criticism" value="no">
+                <label for="s1q3_no" style="display: inline;">No</label>
+            </div>
+
+            <div class="question">
+                <label>4. Which of these activities energize you? (Check Box)</label>
+                <input type="checkbox" id="s1q4_a" name="s1q4_energy" value="collaboration">
+                <label for="s1q4_a" style="display: inline;">Team Collaboration</label><br>
+                <input type="checkbox" id="s1q4_b" name="s1q4_energy" value="solitude">
+                <label for="s1q4_b" style="display: inline;">Solitary Deep Work</label>
+            </div>
+
+            <div class="question">
+                <label for="s1q5">5. How would you rate your current stress level? (Drop Down)</label>
+                <select id="s1q5" name="s1q5_stress_level" required>
+                    <option value="">-- Select an option --</option>
+                    <option value="low">1 - Low</option>
+                    <option value="medium">3 - Medium</option>
+                    <option value="high">5 - High</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit Section 1</button>
+        </form>
+    </div>
+
+    <div class="section-container">
+        <h2>Section 2: Team Dynamics</h2>
+        <form action="/submit-section-2" method="post">
+            
+            <div class="question">
+                <label for="s2q1">1. Choose the role you most often take in a new team. (Drop Down)</label>
+                <select id="s2q1" name="s2q1_team_role" required>
+                    <option value="">-- Select a Role --</option>
+                    <option value="leader">The Leader/Director</option>
+                    <option value="facilitator">The Facilitator/Mediator</option>
+                    <option value="specialist">The Technical Specialist</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>2. When a deadline is missed, do you focus on solutions or blame? (Radio Button)</label>
+                <input type="radio" id="s2q2_sol" name="s2q2_focus" value="solutions" required>
+                <label for="s2q2_sol" style="display: inline;">Solutions</label><br>
+                <input type="radio" id="s2q2_blame" name="s2q2_focus" value="blame">
+                <label for="s2q2_blame" style="display: inline;">Blame</label>
+            </div>
+
+            <div class="question">
+                <label for="s2q3">3. Describe a situation where you had to adjust your approach for a team member. (Text Area)</label>
+                <textarea id="s2q3" name="s2q3_adjust" rows="4" required></textarea>
+            </div>
+
+            <div class="question">
+                <label>4. What communication methods do you prefer for important updates? (Check Box)</label>
+                <input type="checkbox" id="s2q4_email" name="s2q4_comms" value="email">
+                <label for="s2q4_email" style="display: inline;">Email</label><br>
+                <input type="checkbox" id="s2q4_meeting" name="s2q4_comms" value="meeting">
+                <label for="s2q4_meeting" style="display: inline;">Face-to-face Meeting</label><br>
+                <input type="checkbox" id="s2q4_chat" name="s2q4_comms" value="chat">
+                <label for="s2q4_chat" style="display: inline;">Instant Chat</label>
+            </div>
+
+            <div class="question">
+                <label for="s2q5">5. Enter your project's secret team code for validation. (Password Field)</label>
+                <input type="password" id="s2q5" name="s2q5_team_code" required>
+            </div>
+
+            <button type="submit">Submit Section 2</button>
+        </form>
+    </div>
+
+    <div class="section-container">
+        <h2>Section 3: Adaptability</h2>
+        <form action="/submit-section-3" method="post">
+            <p>... 5 questions using all 5 form elements ...</p>
+            <button type="submit">Submit Section 3</button>
+        </form>
+    </div>
+
+    <div class="section-container">
+        <h2>Section 4: Motivation</h2>
+        <form action="/submit-section-4" method="post">
+            <p>... 5 questions using all 5 form elements ...</p>
+            <button type="submit">Submit Section 4</button>
+        </form>
+    </div>
+
+    <div class="section-container">
+        <h2>Section 5: Conflict Resolution</h2>
+        <form action="/submit-section-5" method="post">
+            <p>... 5 questions using all 5 form elements ...</p>
+            <button type="submit">Submit Section 5</button>
+        </form>
+    </div>
+
+    <div class="section-container">
+        <h2>Section 6: Work Ethic</h2>
+        <form action="/submit-section-6" method="post">
+            <p>... 5 questions using all 5 form elements ...</p>
+            <button type="submit">Submit Section 6</button>
+        </form>
+    </div>
+
+    <div class="section-container">
+        <h2>Section 7: Future Outlook</h2>
+        <form action="/submit-section-7" method="post">
+            <p>... 5 questions using all 5 form elements ...</p>
+            <button type="submit">Submit Section 7</button>
+        </form>
+    </div>
+
+</body>
+</html>
